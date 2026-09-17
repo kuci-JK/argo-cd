@@ -108,6 +108,7 @@ func runCmd(t *testing.T, cmd *cobra.Command, args ...string) (stdout string, st
 	if err != nil {
 		errMsg, _ := NewDefaultPluginHandler().HandleCommandExecutionError(err, true, args)
 		errbuf.WriteString(errMsg)
+		errbuf.WriteString("\n")
 	}
 
 	return outbuf.String(), errbuf.String(), err
